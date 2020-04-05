@@ -1,8 +1,10 @@
 import React from "react";
 
-import { connect } from "react-redux";
-import { auth } from "../../firebase/firebase.utils";
 import { Link } from "react-router-dom";
+
+import { connect } from "react-redux";
+
+import { auth } from "../../firebase/firebase.utils";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import "./header.styles.scss";
 
@@ -20,7 +22,7 @@ const Header = ({ currentUser }) => (
       </Link>
       {currentUser ? (
         <div className="option" onClick={() => auth.signOut()}>
-          {currentUser.displayName}SIGN OUT
+          SIGN OUT
         </div>
       ) : (
         <Link className="option" to="/signin">
